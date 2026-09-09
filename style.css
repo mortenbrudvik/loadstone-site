@@ -1,0 +1,42 @@
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+  color: #1a1a1a;
+  background: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  body { color: #e9e9ea; background: #16171a; }
+  a { color: #8ab4ff; }
+  code, kbd { background: #23252a !important; border-color: #33363d !important; }
+  th { border-bottom-color: #33363d !important; }
+  td { border-bottom-color: #26282d !important; }
+  .note { background: #1c1e22 !important; border-left-color: #4a4f58 !important; }
+}
+h1 { font-size: 1.9rem; margin: 0 0 .25rem; letter-spacing: -.01em; }
+h2 { font-size: 1.2rem; margin: 2.25rem 0 .6rem; }
+h3 { font-size: 1rem; margin: 1.5rem 0 .4rem; }
+.meta { color: #6a6a6a; font-size: .95rem; margin: 0 0 2rem; }
+@media (prefers-color-scheme: dark) { .meta { color: #9a9a9e; } }
+nav { margin: 0 0 2.5rem; font-size: .95rem; }
+nav a { margin-right: 1.1rem; }
+table { border-collapse: collapse; width: 100%; margin: .8rem 0 1.4rem; font-size: .95rem; }
+th, td { text-align: left; padding: .45rem .6rem .45rem 0; vertical-align: top; }
+th { border-bottom: 2px solid #ddd; font-weight: 600; }
+td { border-bottom: 1px solid #eee; }
+code, kbd {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: .88em; background: #f4f4f5; border: 1px solid #e4e4e7;
+  border-radius: 4px; padding: .08em .35em;
+}
+pre { background: #f4f4f5; border-radius: 8px; padding: .9rem 1rem; overflow-x: auto; }
+pre code { background: none; border: none; padding: 0; }
+.note { background: #f6f7f9; border-left: 3px solid #c9ccd3; padding: .75rem 1rem; margin: 1.2rem 0; border-radius: 0 6px 6px 0; }
+ul { padding-left: 1.25rem; }
+li { margin: .3rem 0; }
+footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid #e4e4e7; font-size: .9rem; color: #6a6a6a; }
+@media (prefers-color-scheme: dark) { footer { border-top-color: #2a2c31; color: #9a9a9e; } }

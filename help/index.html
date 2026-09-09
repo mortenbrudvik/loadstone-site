@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loadstone Help</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Loadstone Help</h1>
+<p class="meta">Loadstone for Windows · Publisher: Morten Brudvik</p>
+
+<nav><a href="../">Home</a><a href="../privacy/">Privacy policy</a></nav>
+
+<p>
+  Loadstone lives in the notification area. Right-click its icon for the full list of layouts, to open
+  <strong>Settings</strong>, or to quit. Every layout also has a keyboard shortcut.
+</p>
+
+<h2>Default shortcuts</h2>
+<p>All of these are <kbd>Ctrl</kbd>+<kbd>Alt</kbd> unless noted. Change any of them in <strong>Settings → Shortcuts</strong>.</p>
+
+<table>
+<tr><th>Layout</th><th>Shortcut</th></tr>
+<tr><td>Left / right / top / bottom half</td><td><code>Ctrl+Alt+←</code> <code>Ctrl+Alt+→</code> <code>Ctrl+Alt+↑</code> <code>Ctrl+Alt+↓</code></td></tr>
+<tr><td>Top left / top right corner</td><td><code>Ctrl+Alt+U</code> <code>Ctrl+Alt+I</code></td></tr>
+<tr><td>Bottom left / bottom right corner</td><td><code>Ctrl+Alt+J</code> <code>Ctrl+Alt+K</code></td></tr>
+<tr><td>Left / center / right third</td><td><code>Ctrl+Alt+D</code> <code>Ctrl+Alt+F</code> <code>Ctrl+Alt+G</code></td></tr>
+<tr><td>Left / right two thirds</td><td><code>Ctrl+Alt+E</code> <code>Ctrl+Alt+T</code></td></tr>
+<tr><td>Maximize</td><td><code>Ctrl+Alt+Enter</code></td></tr>
+<tr><td>Center (keeps the current size)</td><td><code>Ctrl+Alt+C</code></td></tr>
+<tr><td>Restore</td><td><code>Ctrl+Alt+Backspace</code></td></tr>
+<tr><td>Next / previous display</td><td><code>Ctrl+Alt+Win+→</code> <code>Ctrl+Alt+Win+←</code></td></tr>
+</table>
+
+<p>The corner keys form a square on the keyboard:</p>
+<pre><code>U  I
+J  K</code></pre>
+
+<div class="note">
+  On Norwegian, German and most other European layouts, AltGr reaches Windows as Ctrl+Alt, so
+  <code>Ctrl+Alt+E</code> also captures the <code>€</code> key while Loadstone runs. Settings shows
+  <em>“Types € on your keyboard layout”</em> next to any such binding — rebind it if you type that character.
+</div>
+
+<h2>Drag to snap</h2>
+<p>
+  Drag a window by its title bar until the pointer reaches an edge or corner of the display. A preview
+  in the system accent colour shows the tile; let go to snap. Only a window that is actually moving
+  snaps, so selecting text or dragging a slider to an edge does nothing.
+</p>
+<ul>
+  <li><strong>Corners</strong> — a quarter. The corner zones are 140 px squares, scaled with the display, and win over the edges.</li>
+  <li><strong>Left and right edges</strong> — a half.</li>
+  <li><strong>Top edge</strong> — maximize.</li>
+  <li><strong>Bottom edge</strong> — a third, chosen by where along the edge you let go.</li>
+  <li><strong>Portrait displays</strong> — the sides give corner, vertical third, corner along their length, and the bottom edge gives halves.</li>
+  <li><strong>More than one display</strong> — every display has its own zones, including the edge it shares with a neighbour. The pointer does not stop at a shared edge the way it does at an outer one, so slow down there and release while the preview is showing. The window snaps onto the display the pointer is on.</li>
+</ul>
+<p>
+  The edge zones are 16 px deep at 100% scaling and extend the same distance past an outer edge, so
+  overshooting still counts.
+</p>
+
+<div class="note">
+  Drag-to-snap is <strong>off until you turn it on</strong> in Settings. Turning it on is what lets
+  Loadstone switch off Windows' own drag-to-edge snapping while it runs, so the two do not fight.
+  Windows' setting comes back when you turn it off, when Loadstone quits, or when you sign out.
+</div>
+
+<h2>Troubleshooting</h2>
+
+<h3>One window will not move</h3>
+<p>
+  Windows belonging to programs running as administrator cannot be moved by a program that is not —
+  this is a Windows security rule, not a fault in Loadstone. Some windows are also fixed-size; those
+  are centred in the tile instead of resized. Loadstone beeps and logs the refusal, and everything
+  else keeps working.
+</p>
+
+<h3>A shortcut does nothing</h3>
+<p>
+  Check <strong>Settings → Shortcuts</strong>. A chord already held by another app is captioned
+  <em>“In use by another app”</em> — close that app or rebind. Graphics-driver utilities and
+  file-manager tools commonly hold Ctrl+Alt+arrow chords and are the usual culprits.
+</p>
+
+<h3>Dragging to an edge does not snap</h3>
+<p>
+  Drag by the title bar; the window has to actually move before Loadstone treats the gesture as a drag.
+  On the edge between two displays the pointer passes straight through, so slow down and release while
+  the preview is showing. If Windows' own Snap Layouts flyout appears at the top edge, turn it off
+  under Settings → System → Multitasking → Snap windows.
+</p>
+
+<h3>Restore does nothing</h3>
+<p>
+  Restore is one-shot: it puts the window back where it was before Loadstone first moved it, then
+  forgets. The next Loadstone command starts a new memory. The memory is also dropped when the window
+  closes or when Loadstone restarts.
+</p>
+
+<h3>Next / previous display just beeps</h3>
+<p>Only one display is attached.</p>
+
+<h3>Windows' own edge snapping is off after a crash</h3>
+<p>
+  Loadstone turns it off while its drag snapping is on and turns it back on when it quits normally.
+  After an unclean exit, simply launching Loadstone again restores it. To put it back by hand, use
+  Settings → System → Multitasking → Snap windows.
+</p>
+
+<h3>Launch at login is on but Loadstone does not start</h3>
+<p>
+  Task Manager → Startup apps may have it disabled. Settings shows
+  <em>“Disabled in Task Manager”</em> with a button that opens that page.
+</p>
+
+<h3>Reading the log</h3>
+<p>
+  <strong>Settings → General → Open log folder</strong> opens the folder directly. The startup summary
+  lists the effective binding and status of every shortcut.
+</p>
+
+<footer>Loadstone for Windows · © 2026 Morten Brudvik · MIT licensed</footer>
+</body>
+</html>
