@@ -13,8 +13,10 @@
 <nav><a href="../">Home</a><a href="../privacy/">Privacy policy</a></nav>
 
 <p>
-  Loadstone lives in the notification area. Right-click its icon for the full list of layouts, to open
-  <strong>Settings</strong>, or to quit. Every layout also has a keyboard shortcut.
+  Loadstone lives in the notification area, next to the clock. Windows hides icons it has not seen
+  before, so look under the <strong>^</strong> arrow at the left end of the tray, and drag the icon out
+  to keep it in view. Click it to open <strong>Settings</strong>; right-click it for the full list of
+  layouts, or to quit. Every layout also has a keyboard shortcut.
 </p>
 
 <h2>Default shortcuts</h2>
@@ -36,6 +38,19 @@
 <p>The corner keys form a square on the keyboard:</p>
 <pre><code>U  I
 J  K</code></pre>
+
+<p>
+  Press <code>Ctrl+Alt+←</code> again on a window that is already in the left half and it moves on to
+  the right half of the display to its left, so repeated presses walk it across your displays one half
+  at a time. <code>Ctrl+Alt+→</code> does the same to the right. At the outer edge of the desk the
+  window stays put, and a display above or below does not count.
+</p>
+
+<p>
+  Restore puts the window back where it was before Loadstone first moved it. To step back one move at
+  a time instead, including a drag snap, turn on
+  <strong>Settings → General → Restore one move at a time</strong>.
+</p>
 
 <div class="note">
   On Norwegian, German and most other European layouts, AltGr reaches Windows as Ctrl+Alt, so
@@ -95,19 +110,29 @@ J  K</code></pre>
 
 <h3>Restore does nothing</h3>
 <p>
-  Restore is one-shot: it puts the window back where it was before Loadstone first moved it, then
-  forgets. The next Loadstone command starts a new memory. The memory is also dropped when the window
-  closes or when Loadstone restarts.
+  Restore remembers where the window was before Loadstone moved it, then forgets once that place is
+  restored. By default that is one jump back to the original spot. With
+  <strong>Restore one move at a time</strong> on (Settings → General), each press steps back one move
+  until that same spot, and then it forgets. The next Loadstone command starts a new memory. The
+  memory is also dropped when the window closes or when Loadstone restarts.
 </p>
 
 <h3>Next / previous display just beeps</h3>
 <p>Only one display is attached.</p>
 
+<h3>Pressing <code>Ctrl+Alt+←</code> again does not move the window to the display beside it</h3>
+<p>
+  Only a display to the side counts, as arranged in Settings → System → Display; one above or below
+  does not. And the window has to be in that half already: if you have moved it since, or the display's
+  resolution, scaling or taskbar has changed, the first press puts it back into the half.
+</p>
+
 <h3>Windows' own edge snapping is off after a crash</h3>
 <p>
   Loadstone turns it off while its drag snapping is on and turns it back on when it quits normally.
-  After an unclean exit, simply launching Loadstone again restores it. To put it back by hand, use
-  Settings → System → Multitasking → Snap windows.
+  After an unclean exit, simply launching Loadstone again restores it, and signing out and back in
+  restores it too. The Snap windows switch in Settings → System → Multitasking shows as on the whole
+  time, so it will not tell you whether snapping is really on.
 </p>
 
 <h3>Launch at login is on but Loadstone does not start</h3>
